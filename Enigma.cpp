@@ -19,8 +19,18 @@ void rotors(std::string input)
 
 	std::cout << "Typed in: " << input << '\n';
 
-	// TODO: Find rotors I - V letter configs, or create random ones
-
+	// Wehrmacht and Luftwaffe Enigma I cipher rotors wiring:
+	// ETW - Eintrittswalze -> Entry wheel
+	// Notch -> Letter at which a notch is placed. Reaching the noch causes a pawl to be engaged causing the next rotor (to the left) to move a single step
+	
+	/*	01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 Notch
+	ETW	 A	B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z     
+	I	 E  K  M  F  L  G  D  Q  V  Z  N  T  O  W  Y  H  X  U  S  P  A  I  B  R  C  J     Y
+	II	 A  J  D  K  S  I  R  U  X  B  L  H  W  T  M  C  Q  G  Z  N  P  Y  F  V  O  E     M
+	III	 B  D  F  H  J  L  C  P  R  T  X  V  Z  N  Y  E  I  W  G  A  K  M  U  S  Q  O     D
+	IV	 E  S  O  V  P  Z  J  A  Y  Q  U  I  R  H  X  L  N  F  T  G  K  D  C  M  W  B     R
+	V	 V  Z  B  R  G  I  T  Y  U  P  S  D  N  H  L  X  A  W  M  J  Q  O  F  E  C  K     H
+	*/
 	return;
 }
 
@@ -37,6 +47,7 @@ int main()
 	// 
 	// Rotors refers to a set of three rotors that are numbered 1 - 26 all. 
 	// There are predefined I - V rotors (VI - VIII for navy with different notches) with differently scrambled letters.
+	// Reaching a notch on a rotor causes the rotor next to it (the one to the left) to move a single step.
 	//
 	// Reflector is placed after the last rotor and returns the current back through them after scrambling it (basically functions as another rotor that redirects current back through all of the rotors in reverse order).
 	rotors(plugboard());
